@@ -1,5 +1,7 @@
 # branchesMergedSince
 A python scrip to show all of the branches merged since an input date.
+## Requirements
+- Python 3
 ## Usage
 `branchesMergedSince.py "Mar 9, 2019 at 10:30 AM"`
 ## Caveats
