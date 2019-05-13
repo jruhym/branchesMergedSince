@@ -21,8 +21,8 @@ def main(arguments):
     target_date = target_date.replace(tzinfo=timezone)
 
     branch = subprocess.check_output(('/usr/bin/git', 'rev-parse', '--abbrev-ref', 'HEAD')).decode("utf-8").strip()
-
-    gitLog = subprocess.check_output(('/usr/bin/git', 'log')).decode("utf-8")
+    target_date_git_format = target_date.strftime(gitLogDateFormat)
+    gitLog = subprocess.check_output(('/usr/bin/git', 'log', '--merges', '--since=' + target_date_git_format)).decode("utf-8")
 
     i = 0
     git_IO = StringIO(gitLog)
